@@ -1,0 +1,4 @@
+{
+    "target_directory": "sensor_data",
+    "number_of_process": 10
+}

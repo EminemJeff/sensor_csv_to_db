@@ -1,0 +1,33 @@
+version: '3'
+
+volumes:
+  sensors_database_data: {}
+
+services:
+  sensor_main_program:
+    build:
+      # context: ./backend
+      dockerfile: ./compose/sensor_main_program/dockerfile
+    image: sensor_main_program
+    
+    depends_on:
+      - sensor_database
+    volumes:
+      - ./:/app:z
+    env_file:
+      - .envs/.postgres
+    command: /start
+
+  sensor_database:
+    build:
+      dockerfile: ./compose/sensor_database/dockerfile
+    image: sensor_database
+    
+    ports:
+      - 5432:5432
+    volumes:
+      - sensors_database_data:/var/lib/postgresql/data
+    env_file:
+      - .envs/.postgres
+    logging:
+      driver: none
