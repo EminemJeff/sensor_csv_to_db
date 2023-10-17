@@ -54,7 +54,7 @@ start_program.bat
 
 In Ubuntu, open cmd and type
 ```
-./start_program.sh
+sudo ./start_program.sh
 ```
 
 ### Inspecting database
