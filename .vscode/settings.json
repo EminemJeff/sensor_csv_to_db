@@ -1,6 +1,7 @@
 {
     "python.pythonPath": "venv\\Scripts\\python.exe",
     "python.analysis.typeCheckingMode": "basic",
+    "python.linting.pycodestyleEnabled": true,
     "python.linting.pep8Enabled": true,
     "python.linting.flake8Enabled": true,
     "editor.formatOnSave": true
